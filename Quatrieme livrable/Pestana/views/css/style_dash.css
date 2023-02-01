@@ -1,0 +1,43 @@
+.offcanvas,
+.header_dash{
+  background-color: #273d64;
+}
+.sidebar-nav {
+  width: 270px;
+}
+.sidebar-link {
+  display: flex;
+  align-items: center;
+}
+.sidebar-link .right-icon {
+  display: inline-flex;
+}
+.main-bg{
+  background-color: #273d64 !important;
+  color: white;
+}
+.main-bg:hover{
+  background-color: transparent !important;
+  border: 1px solid #273d64 ;
+  color: black;
+}
+
+.sidebar-link[aria-expanded="true"] .right-icon {
+  transform: rotate(180deg);
+}
+@media (min-width: 992px) {
+  main {
+    margin-left: 270px;
+  }
+  /* this is to remove the backdrop */
+  .offcanvas-backdrop::before {
+    display: none;
+  }
+  .sidebar-nav {
+    -webkit-transform: none;
+    transform: none;
+    visibility: visible !important;
+    height: calc(100% - 56px);
+    top: 56px;
+  }
+}

@@ -1,0 +1,373 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	text-decoration: none !important;
+	list-style: none;
+}
+
+body {
+	font-family: 'Merriweather Sans', sans-serif;
+}
+
+.home-main,
+.facilities-main,
+.rooms-main,
+.contact-main {
+	height: 100vh;
+	background-size: cover;
+	background-position: center;
+}
+.home-main .book,
+.facilities-main .book,
+.rooms-main .book {
+	background-color: #273d6463;
+	color: white;
+}
+.home-main {
+	background-image: url(../img/background.jpg);
+}
+.facilities-main {
+	background-image: url(../img/background1.jpg);
+}
+.rooms-main {
+	background-image: url(../img/background2.jpg);
+}
+.contact-main {
+	background-image: url(../img/background.jpg);
+	height: 50vh;
+}
+.main-btn {
+	background-color: #e0b973;
+	color: white;
+	width: 200px;
+	padding: 10px;
+	border-radius: 5px;
+	font-size: 20px;
+	border: 1px solid #e0b973;
+}
+.main-btn:hover {
+	background-color: transparent;
+	color: #e0b973;
+}
+.heading {
+	margin: 0;
+	font-size: 5.5rem;
+	font-weight: bold;
+}
+.navbar_header {
+	position: fixed;
+	z-index: 100;
+	left: 0;
+	padding: 20px 8%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+	transition: 0.3s;
+	height: 100px;
+}
+
+.navbar_header a {
+	color: white;
+	font-size: 1.3rem;
+}
+
+.navbar_header .logo img {
+	height: 60px;
+}
+
+.navbar_header .nav-links ul:first-child {
+	display: flex;
+	margin: 0;
+	padding: 0;
+}
+.navbar_header .nav-links ul li {
+	font-weight: 600;
+	margin: 0 20px;
+}
+
+.navbar_header .nav-links ul li .login-btn {
+	color: #e0b973;
+	border: 1px solid #e0b973;
+	padding: 10px 20px;
+	border-radius: 7px;
+	background-color: transparent;
+}
+.navbar_header .nav-links ul li .login-btn:hover {
+	color: white;
+	background-color: #e0b973;
+}
+.navbar_header .nav-links ul .active {
+	border-bottom: 2px solid #e0b973;
+	color: #e0b973;
+}
+.navbar_header .menu {
+	width: 40px;
+	position: absolute;
+	top: 30px;
+	right: 33px;
+	display: none;
+}
+.facilities div p {
+	bottom: 0;
+	right: 0;
+	left: 0;
+	width: 35%;
+	min-width: 230px;
+	background-color: white;
+}
+
+.rooms .row > div {
+	border: 2px solid #273d64;
+}
+.rooms .row > div p {
+	background-color: #273d64;
+}
+.login_register {
+	z-index: 1000;
+	backdrop-filter: blur(8px);
+	transition: 1s;
+}
+.login_register img:first-of-type{
+	top: 10px;
+	right: 10px;
+	width: 20px;
+	cursor: pointer;
+}
+.login_register .lr-form {
+	width: 90%;
+	max-width: 500px;
+	padding: 60px;
+	text-align: center;
+	background-color: white;
+}
+.login_register .lr-form p:first-of-type {
+	font-size: 30px;
+	font-weight: bold;
+	margin-bottom: 40px;
+	position: relative;
+}
+.login_register .lr-form p:first-of-type::after {
+	content: '';
+	width: 30px;
+	height: 4px;
+	border-radius: 3px;
+	background-color: black;
+	position: absolute;
+	bottom: -12px;
+	right: 0;
+	left: 0;
+	margin-left:auto;
+	margin-right:auto;
+}
+.input-field{
+	background-color: #eaeaea;
+	margin: 15px 0;
+	border-radius: 3px;
+	display: flex;
+	align-items: center;
+	max-height: 65px;
+	transition: max-height 0.5s;
+	overflow: hidden;
+}
+.input-field svg{
+	margin-left: 15px !important;
+	color: #999;
+}
+.input-field input{
+	width: 100%;
+	background-color: transparent;
+	border: 0;
+	outline: 0;
+	padding:18px 15px ;
+}
+.btn-field{
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+}
+.btn-field button{
+	flex-basis: 48%;
+	background: #273d64;
+	color: white;
+	height: 40px;
+	border-radius: 10px;
+	border: 0;
+	outline: 0;
+	cursor: pointer;
+	transition: background 1s;
+}
+.disable{
+	color: #555 !important;
+	background-color: #eee !important;
+}
+.hide{
+	display: none !important;
+}
+.search{
+	min-height: 500px;
+}.room-cards{
+	min-width: 315px;
+}
+.room-img{
+	height: 250px;
+}
+.reserv-card{
+	background-color: #e0b973;
+}
+footer {
+	background-color: #273d64;
+	color: white;
+	padding: 50px;
+}
+
+footer h4 {
+	margin-bottom: 30px;
+	position: relative;
+	width: fit-content;
+}
+footer h4::before {
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: 4px;
+	border-radius: 3px;
+	background-color: white;
+	left: 0;
+	bottom: -10px;
+}
+footer ul li {
+	font-size: 1.2rem;
+	margin-bottom: 10px;
+}
+footer ul li a {
+	color: white;
+	width: fit-content;
+}
+footer input {
+	height: 52px;
+}
+.filter {
+	height: 100vh;
+	background: #273d6499;
+}
+.contact-main .filter {
+	height: 50vh;
+}
+
+nav.sticky {
+	background: #273d64;
+	box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
+}
+.noscroll {
+	overflow: hidden;
+}
+.rooms-main form input,
+.rooms-main form select,
+.home-main form input,
+.home-main form select,
+.facilities-main form input,
+.facilities-main form select {
+	height: 52px;
+}
+
+
+@media screen and (max-width: 992px) {
+	.navbar_header .menu {
+		display: block;
+	}
+	.nav-links {
+		position: absolute;
+		background-color: #0000008f;
+		backdrop-filter: blur(8px);
+		width: 100%;
+		height: 100vh;
+		top: 0;
+		left: 0;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin-left: -100%;
+		transition: all 0.5s ease;
+	}
+	.nav-links.mobile-menu {
+		margin-left: 0;
+	}
+	.navbar_header .logo {
+		position: absolute;
+		top: 19px;
+		left: 20px;
+	}
+	.nav-links ul {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	.navbar_header .nav-links ul li {
+		margin: 20px 0;
+		font-size: 1.2rem;
+	}
+	.filter {
+		height: 135vh;
+	}
+	.home-main,
+	.facilities-main,
+	.rooms-main{
+		height: 135vh;
+	}
+}
+@media screen and (max-width: 576px) {
+	p,
+	h2 {
+		text-align: center;
+	}
+	.align {
+		align-items: center;
+	}
+	.features img {
+		margin-top: 1rem;
+	}
+	.main div:nth-child(2) {
+		top: 20px;
+	}
+	.heading {
+		font-size: 3.5rem;
+	}
+	.rooms-main form,
+	.home-main form,
+	.facilities-main form {
+		flex-direction: column;
+	}
+	footer form div {
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+	footer form div input {
+		padding: 20px;
+	}
+	footer form div button {
+		margin-top: 5px;
+		width: 100%;
+	}
+	.filter {
+		height: 135vh;
+	}
+	.home-main,
+	.facilities-main,
+	.rooms-main {
+		height: 135vh;
+	}
+	.filter + div {
+		margin-top: 80px;
+	}
+}
+
+td{
+	padding: 10px;
+}
+
+
+
+
+
