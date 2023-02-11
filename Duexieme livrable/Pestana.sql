@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Dec 28, 2022 at 09:34 PM
--- Server version: 10.4.21-MariaDB
--- PHP Version: 7.4.29
+-- Generation Time: Feb 12, 2023 at 12:00 AM
+-- Server version: 10.4.27-MariaDB
+-- PHP Version: 8.1.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -31,8 +31,15 @@ CREATE TABLE `Admin` (
   `admin_id` int(11) NOT NULL,
   `admin_name` varchar(50) NOT NULL,
   `admin_email` varchar(50) NOT NULL,
-  `admin_psw` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `admin_psw` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `Admin`
+--
+
+INSERT INTO `Admin` (`admin_id`, `admin_name`, `admin_email`, `admin_psw`) VALUES
+(1, 'ayoub', 'ayoub@gmail.com', '$2y$10$2w56kQUwZ7ZlPki/LTfHZ.HmCNEaCP17GmMtB23PHEx4DjA4NIcPG');
 
 -- --------------------------------------------------------
 
@@ -45,7 +52,14 @@ CREATE TABLE `guest` (
   `guest_name` varchar(50) NOT NULL,
   `guest_email` varchar(50) NOT NULL,
   `guest_psw` varchar(500) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `guest`
+--
+
+INSERT INTO `guest` (`guest_id`, `guest_name`, `guest_email`, `guest_psw`) VALUES
+(1, 'ayoub', 'ayoub@gmail.com', '$2y$10$2w56kQUwZ7ZlPki/LTfHZ.HmCNEaCP17GmMtB23PHEx4DjA4NIcPG');
 
 -- --------------------------------------------------------
 
@@ -58,7 +72,14 @@ CREATE TABLE `person` (
   `person_Fname` varchar(50) NOT NULL,
   `person_Lname` varchar(50) NOT NULL,
   `person_dob` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `person`
+--
+
+INSERT INTO `person` (`reservation_id`, `person_Fname`, `person_Lname`, `person_dob`) VALUES
+(1, 'ayoub', 'ahababnams', '2023-02-26');
 
 -- --------------------------------------------------------
 
@@ -72,7 +93,14 @@ CREATE TABLE `reservation` (
   `room_id` int(11) NOT NULL,
   `reservation_checkin` date NOT NULL,
   `reservation_checkout` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `reservation`
+--
+
+INSERT INTO `reservation` (`reservation_id`, `guest_id`, `room_id`, `reservation_checkin`, `reservation_checkout`) VALUES
+(1, 1, 8, '2023-03-03', '2023-03-04');
 
 -- --------------------------------------------------------
 
@@ -85,18 +113,16 @@ CREATE TABLE `rooms` (
   `room_type` varchar(50) NOT NULL,
   `room_suite_type` varchar(50) NOT NULL,
   `room_price` float NOT NULL,
-  `room_img` varchar(500) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `room_img` varchar(500) NOT NULL,
+  `room_max` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `rooms`
 --
 
-INSERT INTO `rooms` (`room_id`, `room_type`, `room_suite_type`, `room_price`, `room_img`) VALUES
-(1, 'Double', '--', 97.9, 'upload/img5.jpg'),
-(4, 'Suite', 'Presidential', 13, './views/upload_img/hotel-g286cc1ce1_1920.jpg'),
-(5, 'Suite', 'Junior', 12, './views/upload_img/img8.png'),
-(7, 'Suite', 'Presidential', 16, './views/upload_img/hotel-room-gf6c8f17b0_1920.jpg');
+INSERT INTO `rooms` (`room_id`, `room_type`, `room_suite_type`, `room_price`, `room_img`, `room_max`) VALUES
+(8, 'Single', ' ', 12, './views/upload_img/bg.jpg', 1);
 
 --
 -- Indexes for dumped tables
@@ -142,25 +168,25 @@ ALTER TABLE `rooms`
 -- AUTO_INCREMENT for table `Admin`
 --
 ALTER TABLE `Admin`
-  MODIFY `admin_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `admin_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `guest`
 --
 ALTER TABLE `guest`
-  MODIFY `guest_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `guest_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `reservation`
 --
 ALTER TABLE `reservation`
-  MODIFY `reservation_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `reservation_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `rooms`
 --
 ALTER TABLE `rooms`
-  MODIFY `room_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `room_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- Constraints for dumped tables
