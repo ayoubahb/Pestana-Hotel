@@ -4,4 +4,3 @@ if (isset($_POST['id'])) {
   
   $deleteRoom->deleteRoom();
 }
-?>

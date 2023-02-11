@@ -24,6 +24,6 @@ if (isset($_POST['submit'])) {
     $page=$_POST['page'];
     $result = $guest->auth($data,$page);
   }
+}else{
+  Redirect::to('home');
 }
-?>
-

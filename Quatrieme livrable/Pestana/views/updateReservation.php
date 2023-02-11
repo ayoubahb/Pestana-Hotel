@@ -5,4 +5,3 @@ $check = new ReservationController();
 $result= $check->updateDates($data);
 
 echo $result;
-?>

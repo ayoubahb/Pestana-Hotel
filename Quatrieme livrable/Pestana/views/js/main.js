@@ -18,7 +18,7 @@ window.addEventListener('scroll', function () {
 //active page navbar
 const activePage = window.location.pathname;
 const links = document.querySelectorAll('.nav-links a').forEach((link) => {
-	if (activePage == '/brf6/') {
+	if (activePage == '/pestana/') {
 		document.querySelector('a[href="home"]').classList.add('active');
 		document.title = 'Home';
 		return;
@@ -189,7 +189,7 @@ check.addEventListener('click', () => {
 			checkout: inputs[1].value,
 		};
 		let xhr = new XMLHttpRequest();
-		xhr.open('POST', 'http://localhost/brf6/check', true);
+		xhr.open('POST', 'http://localhost/pestana/check', true);
 		xhr.setRequestHeader('Content-Type', 'application/json');
 		// send data to server
 		xhr.send(JSON.stringify(data));
@@ -227,7 +227,7 @@ for (let element of deleteBtn) {
 		//create object
 		let xhr = new XMLHttpRequest();
 		// initialize request
-		xhr.open('POST', 'http://localhost/brf6/deleteperson', true);
+		xhr.open('POST', 'http://localhost/pestana/deleteperson', true);
 		//type of data sended to server
 		xhr.setRequestHeader('Content-Type', 'application/json');
 		// send data to server
@@ -283,7 +283,7 @@ done.addEventListener('click',()=>{
 		//create the obj
 		let xhr = new XMLHttpRequest();
 		//initialize request 
-		xhr.open('POST', 'http://localhost/brf6/updateReservation', true);
+		xhr.open('POST', 'http://localhost/pestana/updateReservation', true);
 		//data type sended in request
 		xhr.setRequestHeader('Content-Type', 'application/json');
 		// send data to server
@@ -292,7 +292,7 @@ done.addEventListener('click',()=>{
 		xhr.onload = function () {
 			if (xhr.status === 200) {
 				if (xhr.responseText.trim() == 1) {
-					window.location.href = 'http://localhost/brf6/guest-reservation';
+					window.location.href = 'http://localhost/pestana/guest-reservation';
 				}
 			}
 			

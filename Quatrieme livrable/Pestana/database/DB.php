@@ -1,13 +1,13 @@
 <?php
-class DB{
-  static public function connect(){
+class DB
+{
+  static public function connect()
+  {
 
-    $db = new PDO ('mysql:host=localhost;dbname=Pestana',"root","");
+    $db = new PDO('mysql:host=localhost;dbname=Pestana', "root", "");
     $db->exec("set names utf8");
-    $db->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_WARNING);
+    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
 
     return $db;
   }
 }
-
-

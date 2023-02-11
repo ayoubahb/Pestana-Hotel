@@ -1,13 +1,12 @@
 <?php
 require_once './views/includes/header.php';
-if(isset($_POST['id'])){
+if (isset($_POST['id'])) {
   $reserv = new ReservationController();
   $result = $reserv->getOneReserv($_POST['id']);
 
 
   $person = new PersonController();
   $personResult = $person->getPerson($result['reservation_id']);
-
 }
 ?>
 
@@ -23,7 +22,7 @@ if(isset($_POST['id'])){
 <section class="my-5">
   <div class="container">
     <div class="row align-items-end gap-3 mt-2" id="checkDates">
-      <div class="col-lg col-md col-12" >
+      <div class="col-lg col-md col-12">
         <p class="m-0">Checkin</p>
         <input class="w-100 p-1" type="date" style="height:52px;">
       </div>
@@ -32,11 +31,10 @@ if(isset($_POST['id'])){
         <input class="w-100 p-1" type="date" style="height:52px;">
       </div>
       <div class="col-lg col-md col-12">
-        <button type ="button" id="search" class="main-btn w-100">Check</button>
+        <button type="button" id="search" class="main-btn w-100">Check</button>
       </div>
-      <input type="hidden" id="reservId" value="<?php echo $result['reservation_id']?>">
-      <input type="hidden" id="roomId" value="<?php echo $result['room_id']?>">
-      
+      <input type="hidden" id="reservId" value="<?php echo $result['reservation_id'] ?>">
+      <input type="hidden" id="roomId" value="<?php echo $result['room_id'] ?>">
     </div>
     <div id="result" class="alert w-100 mt-2" style="display:none;"></div>
   </div>
@@ -52,15 +50,15 @@ if(isset($_POST['id'])){
         <th>Operations</th>
       </thead>
       <tbody>
-        <?php foreach ($personResult as $per):?>
-        <tr id="<?php echo $per['personId'];?>">
-          <td><?php echo $per['person_Fname'];?></td>
-          <td><?php echo $per['person_Lname'];?></td>
-          <td><?php echo $per['person_dob'];?></td>
-          <td>
-            <button id="" class="btn btn-sm btn-danger removeBtn"><i class="fa fa-trash"></i></button>
-          </td>
-        </tr>
+        <?php foreach ($personResult as $per) : ?>
+          <tr id="<?php echo $per['personId']; ?>">
+            <td><?php echo $per['person_Fname']; ?></td>
+            <td><?php echo $per['person_Lname']; ?></td>
+            <td><?php echo $per['person_dob']; ?></td>
+            <td>
+              <button id="" class="btn btn-sm btn-danger removeBtn"><i class="fa fa-trash"></i></button>
+            </td>
+          </tr>
         <?php endforeach; ?>
       </tbody>
     </table>

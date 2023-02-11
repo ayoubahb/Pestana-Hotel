@@ -6,4 +6,3 @@ if (isset($_POST['id'])) {
 }else{
   Redirect::to('home');
 }
-?>
